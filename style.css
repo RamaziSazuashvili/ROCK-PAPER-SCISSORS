@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+
+
+.font {
+    font-family: "Playwrite NZ", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+body {
+    /*background-color:#1F3757;*/
+    background: linear-gradient(to bottom, #1F3757, #131537);
+    background-size: 250% 250%;
+    min-width:375px;
+    background-position:center;
+}
+
+.box {
+    border:2px solid white;
+    border-radius: 2px;
+    display:flex;
+    justify-content:space-between;
+    margin: 30px 30px 0px 30px;
+    padding: 20px 20px 20px 20px;
+}
+
+.info p span {
+    display:flex;
+    flex-direction: column;
+}
+
+.info {
+    background-color:white;
+    width: 90px;
+    height: 78px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    line-height: 35px;
+}
+
+p {
+    color:darkblue;
+    font-size:15px;
+    
+}
+
+span {
+    display:flex;
+    color:black;
+    font-size: 28px;
+    padding-left: 6px;
+}
+
+h1 {
+    line-height: 25px;
+    color:white;
+    font-size: 17px;
+}
+
+.container {
+    border:2px solid white transparent;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* column width*/
+    grid-template-rows: 150px; /* row height */
+    gap: 1px; /* gap between icons */
+    position: relative;
+    margin: 100px 10px 0px 10px;
+}
+
+.paper {
+    display:flex;
+    background-color:white;
+    border:15px solid #4664F4;
+    border-radius: 100%;
+    width: 110px;
+    height: 113px;
+    grid-column: 1;
+    grid-row: 1;
+    margin-left:10px;
+}
+
+.scissors {
+    display:flex;
+    background-color:white;
+    border:15px solid #EB9F0E;
+    border-radius:100%;
+    width: 110px;
+    height: 113px;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.rock {
+    display: flex;
+    background-color: white;
+    border: 15px solid #DB2E4D;
+    border-radius: 100%;
+    width: 110px;
+    height: 113px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
