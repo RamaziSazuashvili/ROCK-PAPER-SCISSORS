@@ -8,32 +8,42 @@
     <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-    <main>
+    <main class="font">
         <section class="font box">
             <h1>ROCK<br>PAPER<br>SCISSORS
             </h1>
             <div class="info">   
-                <p>Score
+                <p class="score">Score
                 <span class="score">0
                 </span> 
                 </p>
             </div> 
         </section>
         <div class="container">
-            <div class="paper">
-                <img src="./assets/paper.png" type="img/icon" sizes="50x50" rel="img">
+            <div class="paper" id="paper" onclick="playRound('paper')">
+                <img src="./assets/paper.png" alt="paper" type="img/icon" sizes="50x50" rel="img">
             </div>
 
-            <div class="scissors">
-                <img src="./assets/scissors.png" type="img/icon" sizes="50x50" rel="img">
+            <div class="scissors" id="scissors" onclick="playRound('scissors')">
+                <img src="./assets/scissors.png" alt="scissors" type="img/icon" sizes="50x50" rel="img">
             </div>
 
-            <div class="rock">
-                <img src="./assets/rock.png" type="img/icon" sizes="50x50" rel="img">
+            <div class="rock" id="rock" onclick="playRound('rock')">
+                <img src="./assets/rock.png" alt="rock" type="img/icon" sizes="50x50" rel="img">
+            </div>
+
+            <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Result</h2>
+                <p>You chose: <span id="playerChoice"></span></p>
+                <p>Computer chose: <span id="computerChoice"></span></p>
+                <p class="result-message" id="resultMessage"></p>
+                <button id="playAgainBtn" onclick="closeModal()">Play Again</button>
             </div>
 
         </div>
     </main>
-    
+    <script src="script.js"></script>
 </body>
 </html>
