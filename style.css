@@ -4,6 +4,7 @@
     margin:0;
     padding:0;
     overflow:hidden;
+    box-sizing:border-box;
 }
 
 
@@ -19,6 +20,7 @@ body {
     background-size:1000% 1000%;
     display:block;
     min-width:375px;
+    min-height:100vh;
     background-position:center;
     overflow:hidden;
     background-repeat:no-repeat;
@@ -31,6 +33,7 @@ body {
     justify-content:space-between;
     margin: 30px 30px 0px 30px;
     padding: 20px 20px 20px 20px;
+    max-height:300px;
 }
 
 .info p span {
@@ -50,15 +53,19 @@ body {
 }
 
 p {
-    color:rgb(0, 0, 0);
+    color: #EB9F0E;
     font-size:20px;
     font-weight:900;
+}
+
+.score {
+    color: black;
 }
 
 span {
     display:flex;
     font-weight: 900;
-    color:black;
+    color:#EB9F0E;
     font-size: 30px;
     padding-left: 9px;
 }
@@ -72,6 +79,18 @@ h1 {
 h2 {
     font-weight: 900;
     font-size:30px;
+    color:#EB9F0E;
+}
+
+.player, .computer {
+    color:black;
+    font-weight: 900;
+    font-size:23px;
+}
+
+#playerChoice, #computerChoice {
+    font-size:35px;
+    color:#EB9F0E;
 }
 
 .container {
@@ -81,8 +100,26 @@ h2 {
     grid-template-columns: repeat(3, 100px); /* column width*/
     grid-template-rows: 150px; /* row height */
     gap: 1px; /* gap between icons */
-    position: relative;
-    margin: 100px 10px 0px 10px;
+    margin: 100px 0px 0px 0px;
+    justify-content: center;
+
+}
+
+section {
+    display:block;
+    justify-content: center;
+}
+
+.rules-box {
+    display:flex;
+    font-size: 20px;
+    justify-content: center;
+    font-weight: 900;
+    border: 2px solid white;
+    border-radius: 2px;
+    margin: 60px 50px 20px 50px;
+    padding: 20px 20px;
+    color:white;
 }
 
 .paper {
@@ -120,18 +157,13 @@ h2 {
 }
 
 .container div:hover {
-    transform: scale(1.05);
-    /* Scale up on hover */
-    cursor: pointer;
-    /* Change cursor to pointer */
+    transform: scale(1.05); /* Scale up on hover */
+    cursor: pointer; /* Change cursor to pointer */
 }
 
-/* Additional styling for better visual feedback */
 .container div {
     transition: transform 0.25s ease-in-out;
-    /* Smooth transition */
-    margin: auto;
-    /* Add some margin between icons */
+    margin: auto; /* margin between icons */
 }
 
 
@@ -146,16 +178,14 @@ h2 {
     height: 100%;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.7);
-    /* Dark background */
 }
 
 .modal-content {
-    background: linear-gradient(to bottom, #1a0cdf, #a81313);
+    background: linear-gradient(to bottom, #a81313, #1a0cdf);
     display:grid;
     width:300px;
-    height:400px;
-    padding: 20px;
-    border: 1px solid #888;
+    height:450px;
+    border: 3px solid #EB9F0E;
     border-radius: 20px;
     max-width: 400px;
     text-align: center;
@@ -166,7 +196,7 @@ h2 {
 }
 
 .close {
-    color: #aaa;
+    color: #EB9F0E;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -190,6 +220,9 @@ h2 {
     cursor: pointer;
     border: none;
     border-radius:5px;
+    border:2px solid #EB9F0E;
+    background-color:/*#EB9F0E*/ black;
+    color:#EB9F0E;
     outline: none;
     font-size: 20px;
     /*transition: background-color 0.3s ease;*/
@@ -203,7 +236,7 @@ h2 {
 .result-message {
     margin-top: 20px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .win .modal-content {
@@ -212,4 +245,91 @@ h2 {
 
 .lose .modal-content {
     color: red;
+}
+
+
+
+@media ( min-width: 1280px) {
+    .box {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 230px 0px 230px;
+        padding: 20px 20px 20px 20px;
+        max-width:1000%;
+    }
+
+    section {
+        display:block;
+        justify-content: center;
+    }
+
+    .container {
+        border: 2px solid white transparent;
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(3, 100px); /* column width*/
+        grid-template-rows: 150px; /* row height */
+        gap: 60px; /* gap between icons */
+        position: relative;
+        justify-content: center;
+    }
+
+    .rules-box {
+        display: flex;
+        font-size: 20px;
+        justify-content: center;
+        font-weight: 900;
+        border: 2px solid white;
+        border-radius: 2px;
+        margin: 50px 30px 0px 0px;
+        padding: 20px 40px 20px 40px;
+        color: white;
+        max-width:300px;
+        line-height:25px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+    footer {
+        display:flex;
+        justify-content: flex-end;
+    }
+
+    .paper {
+        display: flex;
+        background-color: white;
+        border: 15px solid #4664F4;
+        border-radius: 100%;
+        width: 180px;
+        height: 183px;
+        grid-column: 1;
+        grid-row: 1;
+        margin-left: 10px;
+    }
+
+    .scissors {
+        display: flex;
+        background-color: white;
+        border: 15px solid #EB9F0E;
+        border-radius: 100%;
+        width: 180px;
+        height: 183px;
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .rock {
+        display: flex;
+        background-color: white;
+        border: 15px solid #DB2E4D;
+        border-radius: 100%;
+        width: 180px;
+        height: 183px;
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+
 }

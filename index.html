@@ -9,16 +9,20 @@
 </head>
 <body>
     <main class="font">
-        <section class="font box">
+        <section>
+            <div class="font box">
             <h1>ROCK<br>PAPER<br>SCISSORS
             </h1>
             <div class="info">   
                 <p class="score">Score
-                <span class="score">0
+                <span class="score score-number">0
                 </span> 
                 </p>
             </div> 
+            </div>
         </section>
+
+
         <div class="container">
             <div class="paper" id="paper" onclick="playRound('paper')">
                 <img src="./assets/paper.png" alt="paper" type="img/icon" sizes="50x50" rel="img">
@@ -31,19 +35,28 @@
             <div class="rock" id="rock" onclick="playRound('rock')">
                 <img src="./assets/rock.png" alt="rock" type="img/icon" sizes="50x50" rel="img">
             </div>
+            
 
             <div id="resultModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h2>Result</h2>
-                <p>You chose: <span id="playerChoice"></span></p>
-                <p>Computer chose: <span id="computerChoice"></span></p>
+                <p class="player">You chose: <span id="playerChoice"></span></p>
+                <p class="computer">Computer chose: <span id="computerChoice"></span></p>
                 <p class="result-message" id="resultMessage"></p>
                 <button id="playAgainBtn" onclick="closeModal()">Play Again</button>
             </div>
-
         </div>
     </main>
+
+    <footer>
+        <div class="rules-box font">
+            Rock > Scissors<br>
+            Paper > Rock<br>
+            Scissors > Paper
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

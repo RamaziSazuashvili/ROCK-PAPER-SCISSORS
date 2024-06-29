@@ -1,41 +1,3 @@
-/*// Get relevant DOM elements
-const scoreElement = document.querySelector('.score span');
-
-// Initial score
-let score = 0;
-
-// Function to generate computer's choice
-function computerPlay() {
-    const choices = ['rock', 'paper', 'scissors'];
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
-}
-
-// Function to determine round winner
-function playRound(playerSelection) {
-    const computerSelection = computerPlay();
-    
-    if (
-        (playerSelection === 'paper' && computerSelection === 'rock') ||
-        (playerSelection === 'rock' && computerSelection === 'scissors') ||
-        (playerSelection === 'scissors' && computerSelection === 'paper')
-    ) {
-        // Player wins
-        score++;
-    } else if (
-        (playerSelection === 'rock' && computerSelection === 'paper') ||
-        (playerSelection === 'scissors' && computerSelection === 'rock') ||
-        (playerSelection === 'paper' && computerSelection === 'scissors')
-    ) {
-        // Computer wins
-        score--;
-    }
-    
-    // Update score on the UI
-    scoreElement.textContent = score;
-}*/
-
-// JavaScript code for Rock Paper Scissors game logic
         const scoreElement = document.querySelector('.score span');
         const playerChoiceDisplay = document.getElementById('playerChoice');
         const computerChoiceDisplay = document.getElementById('computerChoice');
@@ -69,6 +31,7 @@ function playRound(playerSelection) {
                 score++;
                 resultMessage.textContent = 'You won!';
                 resultMessage.classList.add('win');
+                resultMessage.style.color='#00aa0e';
             } else if (
                 (playerSelection === 'rock' && computerSelection === 'paper') ||
                 (playerSelection === 'scissors' && computerSelection === 'rock') ||
@@ -78,10 +41,12 @@ function playRound(playerSelection) {
                 score--;
                 resultMessage.textContent = 'You lose!';
                 resultMessage.classList.add('lose');
+                resultMessage.style.color='#ff0000';
             } else {
                 // It's a draw
                 resultMessage.textContent = 'It\'s a draw!';
                 resultMessage.classList.remove('win', 'lose');
+                resultMessage.style.color='#EB9F0E';
             }
             
             // Update score on the UI
@@ -92,5 +57,5 @@ function playRound(playerSelection) {
             resultModal.style.display = 'none';
             resultMessage.textContent = '';
             resultMessage.classList.remove('win', 'lose');
-            body.classList.remove('modal-open'); // Remove class to remove blur
+            body.classList.remove('modal-open');
         }
